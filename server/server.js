@@ -12,10 +12,20 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 /* ========================= */
-/* MIDDLEWARE */
+/* CORS */
 /* ========================= */
 
-app.use(cors());
+app.use(
+  cors({
+    origin: true,
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
+/* ========================= */
+/* MIDDLEWARE */
+/* ========================= */
 
 app.use(express.json());
 
@@ -26,14 +36,18 @@ app.use(express.json());
 connectDB();
 
 /* ========================= */
-/* ROUTES */
+/* HEALTH CHECK */
 /* ========================= */
 
 app.get("/", (req, res) => {
-  res.json({
+  res.status(200).json({
     message: "Web-Slinger API is running 🕷️",
   });
 });
+
+/* ========================= */
+/* CONTACT ROUTES */
+/* ========================= */
 
 app.use("/api/contact", contactRoutes);
 
