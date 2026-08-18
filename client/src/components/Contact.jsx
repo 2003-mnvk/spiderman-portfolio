@@ -136,7 +136,7 @@ function Contact() {
                 </span>
 
                 <strong>
-                  your-email@example.com
+                  mnvkarthikeya@gmail.com
                 </strong>
 
               </div>
@@ -149,7 +149,7 @@ function Contact() {
                 </span>
 
                 <strong>
-                  INDIA
+                  HYDERABAD, INDIA
                 </strong>
 
               </div>
